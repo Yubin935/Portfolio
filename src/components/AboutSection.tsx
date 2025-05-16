@@ -92,7 +92,7 @@ const AboutSection: React.FC = () => {
                 Contact Me
               </a>
               <a
-                href="/resume.pdf"
+                href="https://drive.google.com/file/d/1YKRTXzgAQlCt4PV7flOUuWPBluCdeBRW/view?usp=sharing"
                 download
                 target="_blank"
                 rel="noopener noreferrer"

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
@@ -6,7 +6,6 @@ import AboutSection from './components/AboutSection';
 import ProjectsSection from './components/ProjectsSection';
 import SkillsSection from './components/SkillsSection';
 import ExperienceSection from './components/ExperienceSection';
-
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import './utils/animation.css';
@@ -15,31 +14,29 @@ function App() {
   useEffect(() => {
     // Update title
     document.title = "Yubin | Full Stack Developer";
-    
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const href = this.getAttribute('href');
-        if (!href) return;
-        
-        const targetElement = document.querySelector(href);
-        if (!targetElement) return;
-        
-        window.scrollTo({
-          top: targetElement.getBoundingClientRect().top + window.scrollY,
-          behavior: 'smooth'
-        });
+
+    // Event handler for smooth scrolling
+    const handleClick = (e: Event) => {
+      e.preventDefault();
+
+      const href = (e.currentTarget as HTMLAnchorElement).getAttribute('href');
+      if (!href) return;
+
+      const targetElement = document.querySelector(href);
+      if (!targetElement) return;
+
+      window.scrollTo({
+        top: targetElement.getBoundingClientRect().top + window.scrollY,
+        behavior: 'smooth',
       });
-    });
-    
+    };
+
+    const anchors = document.querySelectorAll('a[href^="#"]');
+    anchors.forEach(anchor => anchor.addEventListener('click', handleClick));
+
+    // Cleanup event listeners
     return () => {
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.removeEventListener('click', function(e) {
-          e.preventDefault();
-        });
-      });
+      anchors.forEach(anchor => anchor.removeEventListener('click', handleClick));
     };
   }, []);
 
@@ -52,7 +49,6 @@ function App() {
         <ProjectsSection />
         <SkillsSection />
         <ExperienceSection />
-        
         <ContactSection />
         <Footer />
       </div>

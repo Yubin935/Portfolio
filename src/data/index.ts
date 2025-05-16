@@ -67,7 +67,7 @@ export const experiences: Experience[] = [
 export const aboutMe = {
   name: "Yubin",
   title: "Full Stack Developer",
-  description: "I'm a passionate software engineer with 7+ years of experience creating digital experiences that combine technical excellence with beautiful design. My focus is on building scalable, user-friendly applications that solve real-world problems.",
+  description: "I'm a passionate software engineer with 2+ years of experience creating digital experiences that combine technical excellence with beautiful design. My focus is on building scalable, user-friendly applications that solve real-world problems.",
   longDescription: "I specialize in modern web technologies including React, TypeScript, and Node.js, with a strong background in both frontend and backend development. Throughout my career, I've worked with startups and established companies to turn their visions into reality through thoughtful code and intuitive interfaces.\n\nWhen I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or mentoring aspiring developers. I believe in continuous learning and staying at the forefront of technological innovation.",
   location: "Amritsar,Punjab",
   email: "mahajanyubin@gmail.com",
